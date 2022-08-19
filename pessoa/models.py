@@ -12,3 +12,7 @@ class Pessoa(models.Model):
     ativa=models.BooleanField(default=True)
 
 #Depois vamos para o desenvolvimento pessoa/views.py
+
+#O code abaixo para exibir o nome completo da pessoa:
+    def __str__(self) -> str:
+        return self.nome_completo

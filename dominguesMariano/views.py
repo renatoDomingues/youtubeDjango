@@ -4,11 +4,11 @@
 from django.shortcuts import render
 #Esse ListView abaixo, um beneficio Django nos fornece classe, desenvolver na tela
 from django.views.generic import ListView
-from .models import dominguesMariano
+from .models import Produtos
 
 class ConsultarProdutos(ListView):
-    model=dominguesMariano
+    model = Produtos
     #trago todas dentro da Pessoa
-    queryset=dominguesMariano.objects.all().order_by('nome_completo')
+    queryset = Produtos.objects.all().order_by('nome_produto')
 
 #Depois devemos criar um urls

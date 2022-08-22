@@ -3,7 +3,7 @@
 from django.db import models
 
 #Criar uma classe com um nome de um metodo da mesma, para depois adcionarmos os atributos:
-class ConsultarProdutos(models.Model):
+class Produtos(models.Model):
     #para podermos adcionarmos o nome
     nome_produto = models.CharField(max_length=256)
     #codigo de barra do produto

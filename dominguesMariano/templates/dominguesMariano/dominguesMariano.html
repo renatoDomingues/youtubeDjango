@@ -1,2 +1,41 @@
 
 {% extends 'main/base.html' %}
+
+{% block content %}
+    <!-- <a href=" {% url 'pessoa.novo' %} "> Novo </a> -->
+    <table>
+        <thead>
+            <tr>
+                <th> Nome do produto </th>
+                <th> Codigo de barra </th>
+                <th> Preço </th>
+                <th> Data de vencimento </th>
+            </tr>
+            <tbody>
+                {%  for dominguesMariano in ConsultarProdutos %}
+                    <tr>
+                        <td> {{ nome_produto }} </td>
+                        <!-- <td> {{ pessoa.data_nascimento | date:"SHORT_DATE_FORMAT" }} </td> -->
+                        <td> {{ codigo_barra }} </td>
+                        <!-- <td> {{ pessoa.data_nascimento | date:"d/m/Y" }} --> 
+                        <td> {{ preco_produto }} </td>
+                        <td> {{ data_vencimento | date:"d/m/Y" }} </td>
+                        <!--
+                            <td> 
+                                {% if pessoa.ativa %} 
+                                Sim
+                                {% else %}
+                                Não
+                                {% endif %} 
+                            </td>
+                            <td> 
+                                <a href=" {% url 'pessoa.editar' pessoa.pk %} " > Editar </a>
+                            </td>
+                        -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </thead>
+    </table>
+{% endblock content %}
+<!-- <li> <a href="{% url 'produtos.index' %}"> Passe ou digite o codigo do seu produto </a> </li> -->

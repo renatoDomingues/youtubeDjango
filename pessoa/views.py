@@ -2,7 +2,7 @@
 
 from django.shortcuts import render
 #Esse ListView abaixo, um beneficio Django nos fornece classe, desenvolver na tela
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .models import Pessoa
 from .forms import PessoaForm
 
@@ -19,3 +19,11 @@ class PessoaCreateView(CreateView):
     success_url = '/pessoas/'
     
 #Depois vai na urls.py
+
+class PessoaUpdateView(UpdateView):
+    model = Pessoa
+    form_class = PessoaForm
+    success_url = '/pessoas/'
+    
+#Depois criar uma URL na urls.py
+    
